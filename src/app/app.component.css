@@ -1,0 +1,13 @@
+.body {
+  padding: 48px 48px 64px;
+}
+
+.section-head {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.section-head__btn {
+  margin-left: 24px;
+}

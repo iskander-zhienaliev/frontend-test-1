@@ -1,0 +1,34 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  white-space: pre-line;
+}
+
+table tr {
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+table td, table th {
+  padding: 12px;
+  width: 25%;
+  vertical-align: top;
+  text-align: left;
+  font-weight: 500;
+}
+
+.full-screen-dialog {
+  width: 100%;
+  height: 100%;
+  max-width: 100% !important;
+}
+
+.full-screen-dialog .mat-dialog-container {
+  border-radius: 0;
+  padding: 0;
+}

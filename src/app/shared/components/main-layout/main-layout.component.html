@@ -1,0 +1,11 @@
+<div class="main-layout">
+  <ng-content select="[header]"></ng-content>
+  <div class="main-layout__body">
+    <aside class="main-layout__body-side main-layout__body-side--nav">
+      <ng-content select="[sidebar]"></ng-content>
+    </aside>
+    <div class="main-layout__body-side main-layout__body-side--content">
+      <ng-content select="[body]"></ng-content>
+    </div>
+  </div>
+</div>

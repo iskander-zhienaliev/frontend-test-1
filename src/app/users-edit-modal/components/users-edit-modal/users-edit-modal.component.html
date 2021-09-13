@@ -1,0 +1,56 @@
+<div class="modal">
+  <div class="modal__header">
+    <div class="modal__header-item">
+      <button mat-icon-button>
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+    <div class="modal__header-item">
+      <div class="modal__header-buttons">
+        <div class="modal__buttons-item">
+          <button mat-raised-button color="primary">
+            Сохранить
+          </button>
+        </div>
+        <div class="modal__buttons-item">
+          <button mat-stroked-button color="primary">
+            Отмена
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal__body">
+    <h2 class="modal__title">Редактирование пользователей</h2>
+
+    <form class="form">
+      <div class="form__section">
+        <mat-form-field appearance="fill" class="form__field">
+          <mat-label>ФИО</mat-label>
+          <input type="text" matInput>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="form__field">
+          <mat-label>Роль</mat-label>
+          <mat-select>
+            <mat-option value="admin">
+              admin
+            </mat-option>
+            <mat-option value="dev">
+              dev
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <div class="form__buttons">
+          <button mat-raised-button color="warn" class="form__buttons-btn">
+            Удалить
+          </button>
+        </div>
+      </div>
+
+      <button mat-raised-button color="primary" class="form__add-btn">
+        Добавить пользователя
+      </button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<app-main-layout>
+  <mat-toolbar color="primary" header>
+    <span>My Application</span>
+  </mat-toolbar>
+
+  <div class="body" body>
+    <div class="section-head">
+      <h2>Пользователи</h2>
+      <button mat-raised-button color="primary" class="section-head__btn" (click)="onEditUsers()">
+        Редактировать
+      </button>
+    </div>
+    <table>
+      <thead>
+      <tr>
+        <th>
+          ФИО
+        </th>
+        <th>
+          Роль
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let user of users">
+        <td>
+          {{user.name}}
+        </td>
+        <td>
+          {{user.role}}
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</app-main-layout>

@@ -1,0 +1,47 @@
+.modal {
+  overflow: auto;
+}
+
+.modal__header {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  padding: 8px 8px 8px 20px;
+  margin-bottom: 72px;
+}
+
+.modal__header-buttons {
+  display: flex;
+}
+
+.modal__buttons-item + .modal__buttons-item {
+  margin-left: 8px;
+}
+
+.modal__body {
+  width: 42%;
+  padding: 0 48px;
+}
+
+.modal__title {
+  margin: 0 0 36px;
+}
+
+
+.form__field {
+  width: 100%;
+}
+
+.form__field + .form__field {
+  margin-top: 8px;
+}
+
+.form__section + .form__section {
+  margin-top: 16px;
+  padding-top: 32px;
+  border-top: 1px solid #bdbdbd;
+}
+
+.form__add-btn {
+  margin-top: 32px;
+}
