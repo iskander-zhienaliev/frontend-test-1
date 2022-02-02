@@ -8,10 +8,12 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import {UsersEditModalModule} from "./users-edit-modal/users-edit-modal.module";
 import {MatDialogModule} from "@angular/material/dialog";
 import {SharedModule} from "./shared/shared.module";
+import {TranslatePipe} from "./pipes/translate.pipe";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TranslatePipe
   ],
   imports: [
     BrowserModule,

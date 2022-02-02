@@ -29,6 +29,12 @@ export class AppComponent {
     const dialogRef: MatDialogRef<UsersEditModalComponent> = this.dialog.open(UsersEditModalComponent, {
       panelClass: "full-screen-dialog",
       data: {
+        items: this.users
+      }
+    })
+    dialogRef.afterClosed().subscribe((dialogResult) => {
+      if (dialogResult) {
+        this.users = [ ...dialogResult.data]
       }
     });
   }

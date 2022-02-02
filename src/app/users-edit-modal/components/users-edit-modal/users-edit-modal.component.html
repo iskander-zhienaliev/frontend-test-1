@@ -1,56 +1,60 @@
 <div class="modal">
-  <div class="modal__header">
-    <div class="modal__header-item">
-      <button mat-icon-button>
-        <mat-icon>close</mat-icon>
-      </button>
+    <div class="modal__header">
+        <div class="modal__header-item">
+            <button mat-icon-button (click)="close()">
+                <mat-icon>close</mat-icon>
+            </button>
+        </div>
+        <div class="modal__header-item">
+            <div class="modal__header-buttons">
+                <div class="modal__buttons-item">
+                    <button mat-raised-button color="primary" (click)="close(true)" [disabled]="!(isValid$ | async)">
+                        Сохранить
+                    </button>
+                </div>
+                <div class="modal__buttons-item" (click)="close()">
+                    <button mat-stroked-button color="primary">
+                        Отмена
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="modal__header-item">
-      <div class="modal__header-buttons">
-        <div class="modal__buttons-item">
-          <button mat-raised-button color="primary">
-            Сохранить
-          </button>
-        </div>
-        <div class="modal__buttons-item">
-          <button mat-stroked-button color="primary">
-            Отмена
-          </button>
-        </div>
-      </div>
+    <div class="modal__body">
+        <h2 class="modal__title">Редактирование пользователей</h2>
+
+        <form class="form" [formGroup]="form">
+            <div class="form__section" formArrayName="users"
+                 *ngFor="let user of userList.controls; let i = index;">
+
+                <div [formGroupName]="i">
+                    <mat-form-field appearance="fill" class="form__field">
+                        <mat-label>ФИО</mat-label>
+                        <input formControlName="name" type="text" matInput>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill" class="form__field">
+                        <mat-label>Роль</mat-label>
+                        <mat-select formControlName="role">
+                            <mat-option value="admin">
+                                Администратор
+                            </mat-option>
+                            <mat-option value="dev">
+                                Разработчик
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div class="form__buttons">
+                    <button (click)="deleteUser(i)" mat-raised-button color="warn" class="form__buttons-btn">
+                        Удалить
+                    </button>
+                </div>
+            </div>
+
+            <button mat-raised-button color="primary" class="form__add-btn" (click)="addUser()">
+                Добавить пользователя
+            </button>
+        </form>
     </div>
-  </div>
-  <div class="modal__body">
-    <h2 class="modal__title">Редактирование пользователей</h2>
-
-    <form class="form">
-      <div class="form__section">
-        <mat-form-field appearance="fill" class="form__field">
-          <mat-label>ФИО</mat-label>
-          <input type="text" matInput>
-        </mat-form-field>
-        <mat-form-field appearance="fill" class="form__field">
-          <mat-label>Роль</mat-label>
-          <mat-select>
-            <mat-option value="admin">
-              admin
-            </mat-option>
-            <mat-option value="dev">
-              dev
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-
-        <div class="form__buttons">
-          <button mat-raised-button color="warn" class="form__buttons-btn">
-            Удалить
-          </button>
-        </div>
-      </div>
-
-      <button mat-raised-button color="primary" class="form__add-btn">
-        Добавить пользователя
-      </button>
-    </form>
-  </div>
 </div>
